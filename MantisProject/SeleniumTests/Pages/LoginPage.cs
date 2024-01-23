@@ -1,25 +1,48 @@
-﻿using SeleniumFramework;
+﻿using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
+using SeleniumFramework;
+using SeleniumTests.Urls;
 
 namespace SeleniumTests.Pages
 {
-    public class LoginPage : BasePage
+    public class LoginPage : CorePage
     {
+        #region WebElements
+
+        [FindsBy(How = How.Id, Using = "username")]
+        private IWebElement UsernameInput { get; set; }
+        
+        [FindsBy(How = How.Id, Using = "password")]
+        private IWebElement PasswordInput { get; set; }
+        
+        [FindsBy(How = How.XPath, Using = "//input[@value='Войти']")]
+        private IWebElement LoginBtn { get; set; }
+
+        #endregion
+        
         public override bool IsDisplayed()
         {
-            throw new NotImplementedException(); //todo реализовать метод
+            return LoginBtn.Displayed;
         }
 
-        public override bool WaitForLoading()
+        public override void WaitForLoading()
         {
-            throw new NotImplementedException(); //todo реализовать метод
+            LoginBtn.WaitForExists();
         }
         
         public LoginPage Invoke()
         {
-            //Driver.Url = EnvironmentConfiguration._configuration.AdminUrl; //todo сделать конфиги
-            Driver.Url = "http://localhost/mantisbt-1.3.20/signup_page.php"; //todo вынести адрес в конфиги
+            Driver.Url = Urls.Urls.MantisUrl + Urls.Urls.Login; //todo почему два раза Urls
             WaitForLoading();
             return this;
+        }
+
+        public void Login()
+        {
+            Thread.Sleep(1000);
+            UsernameInput.SendKeys("administrator"); //todo вынести логин и пароль в тест дату. посмотреть в проекте
+            PasswordInput.SendKeys("root");
+            LoginBtn.Click();
         }
     }
 }

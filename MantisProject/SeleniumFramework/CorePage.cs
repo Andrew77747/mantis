@@ -14,7 +14,7 @@ namespace SeleniumFramework
         
         public abstract bool IsDisplayed();
 
-        public abstract bool WaitForLoading();
+        public abstract void WaitForLoading();
         
         public void SwitchToDefaultContent() //todo может вынести это в отдельный класс с методами
         {
