@@ -7,6 +7,7 @@ namespace SeleniumTests.Tests.MantisTests
     /// <summary>
     /// Тесты управления проектами
     /// </summary>
+    [TestFixture]
     public class ProjectsTests: BaseTest
     {
         private readonly LoginPage _loginPage = new LoginPage();
@@ -21,6 +22,12 @@ namespace SeleniumTests.Tests.MantisTests
                 .Login();
             _projectsPage.Invoke();
         }
+        
+        [OneTimeTearDown]
+        public void LogOff()
+        {
+            _projectsPage.FastLogoff();
+        }
 
         /// <summary>
         /// Проверяем создание проекта
@@ -32,7 +39,7 @@ namespace SeleniumTests.Tests.MantisTests
             
             _projectsPage.CreateNewProjects(project);
             
-            Assert.IsTrue(_projectsPage.IsProjectContains(project), "Project is not created"); //todo потом переделать ассерт на проверку в базе
+            Assert.IsTrue(_projectsPage.IsProjectExists(project), "Project is not created"); //todo потом переделать ассерт на проверку в базе
         }
         
         /// <summary>
@@ -52,7 +59,7 @@ namespace SeleniumTests.Tests.MantisTests
             var newProjectList = _projectsPage.GetProjectsList();
             
             Assert.AreNotEqual(projectList.Count, newProjectList, "Projects count is equal");
-            Assert.IsFalse(_projectsPage.IsProjectContains(projectToDelete), "Project is not deleted");
+            Assert.IsFalse(_projectsPage.IsProjectExists(projectToDelete), "Project is not deleted");
         }
     }
 }

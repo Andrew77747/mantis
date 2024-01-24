@@ -84,7 +84,7 @@ namespace SeleniumTests.Pages
             return this;
         }
 
-        public bool IsProjectContains(Project project)
+        public bool IsProjectExists(Project project)
         {
             foreach (var projects in ProjectsList)
             {
