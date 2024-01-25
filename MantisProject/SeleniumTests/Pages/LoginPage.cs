@@ -2,6 +2,7 @@
 using SeleniumExtras.PageObjects;
 using SeleniumFramework;
 using SeleniumTests.Urls;
+using TestDataFramework;
 
 namespace SeleniumTests.Pages
 {
@@ -40,8 +41,8 @@ namespace SeleniumTests.Pages
         public void Login()
         {
             Thread.Sleep(1000);
-            UsernameInput.SendKeys("administrator"); //todo вынести логин и пароль в тест дату. посмотреть в проекте
-            PasswordInput.SendKeys("root");
+            UsernameInput.SendKeys(EnvironmentTestData.Data.MantisLogin);
+            PasswordInput.SendKeys(EnvironmentTestData.Data.MantisPassword);
             LoginBtn.Click();
         }
     }

@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumFramework", "Seleni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{3AED359D-4804-4CCA-8F9F-8BB94178D134}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDataFramework", "TestDataFramework\TestDataFramework.csproj", "{6B6BE678-BCF6-4BBB-A91A-259DB4EE78DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiFramework", "ApiFramework\ApiFramework.csproj", "{2F1F8664-948D-4DF4-B76C-517B21A88C8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{3AED359D-4804-4CCA-8F9F-8BB94178D134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AED359D-4804-4CCA-8F9F-8BB94178D134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AED359D-4804-4CCA-8F9F-8BB94178D134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B6BE678-BCF6-4BBB-A91A-259DB4EE78DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6BE678-BCF6-4BBB-A91A-259DB4EE78DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6BE678-BCF6-4BBB-A91A-259DB4EE78DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6BE678-BCF6-4BBB-A91A-259DB4EE78DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F1F8664-948D-4DF4-B76C-517B21A88C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1F8664-948D-4DF4-B76C-517B21A88C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1F8664-948D-4DF4-B76C-517B21A88C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1F8664-948D-4DF4-B76C-517B21A88C8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\SeleniumFramework\SeleniumFramework.csproj" />
+      <ProjectReference Include="..\TestDataFramework\TestDataFramework.csproj" />
     </ItemGroup>
 
 </Project>
